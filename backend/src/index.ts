@@ -12,7 +12,7 @@ app.use('/api', todoListRoutes);  // Use todoList routes
 
 // Basic route
 app.get('/', (req: Request, res: Response) => {
-    res.send('Hello, TypeScript with Express!');
+    res.send('The web3 backend api is running ...');
 });
 
 app.listen(PORT, () => {
