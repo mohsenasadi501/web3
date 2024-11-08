@@ -11,7 +11,7 @@ contract TodoList {
     mapping(uint => Task) public tasks;
 
     constructor() {
-        createTask("Learn Solidiy and web3 soon.");
+        createTask("Solidiy Sample");
     }
 
     function createTask(string memory _content) public {
