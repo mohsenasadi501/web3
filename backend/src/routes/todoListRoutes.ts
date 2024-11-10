@@ -1,8 +1,9 @@
 import { Router } from 'express';
-import { creatTaskController } from '../controllers/todoListController'
+import { createTaskController , readAllTaskController} from '../controllers/taskController'
 
 const router = Router();
 
-router.post('/creatTask', creatTaskController);
+router.get('/readTasks', readAllTaskController);
+router.post('/createTask', createTaskController);
 
 export default router;

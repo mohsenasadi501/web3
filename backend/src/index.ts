@@ -1,6 +1,8 @@
 import express, { Request, Response } from 'express';
 import todoListRoutes  from './routes/todoListRoutes'
+import publicContractRoutes  from './routes/publicContractRoutes'
 import dotenv from 'dotenv'
+import { listenForTaskCreated } from './services/TodoListEventListener';
 
 dotenv.config();
 
@@ -8,7 +10,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());  // Middleware to parse JSON bodies
-app.use('/api', todoListRoutes);  // Use todoList routes
+app.use('/api', todoListRoutes);
+app.use('/api', publicContractRoutes);
+
+//Listen for event 
+listenForTaskCreated();
 
 // Basic route
 app.get('/', (req: Request, res: Response) => {
