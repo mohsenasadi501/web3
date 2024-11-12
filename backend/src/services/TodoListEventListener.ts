@@ -7,7 +7,7 @@ const contractData = require("../../../contracts/artifacts/contracts/TodoList.so
 export const listenForTaskCreated = () => {
     // Initialize Web3 and the contract instance
     // Use a WebSocket provider
-    const provider = new Web3.providers.WebsocketProvider(process.env.WEBSOCKET_BLOCKCHAIN_URL ?? '');
+    const provider = new Web3.providers.WebsocketProvider(process.env.SEPOLIA_WEBSOCKET_BLOCKCHAIN_URL ?? '');
     const web3 = new Web3(provider);
 
     const contractAddress = process.env.SMART_CONTRACT_ADDRESS ?? '';

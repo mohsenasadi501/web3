@@ -1,8 +1,9 @@
 import { Router } from 'express';
-import { USDTController } from '../controllers/publicContractController'
+import { USDTController, BalanceController } from '../controllers/publicContractController'
 
 const router = Router();
 
-router.post('/usdt/read', USDTController);
+router.post('/etherum/read', USDTController);
+router.get('/etherum/balance', BalanceController);
 
 export default router;
