@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import EtherumService from '../services/EtherumService'
 import { Button, Box, TextField } from '@mui/material';
 
@@ -24,9 +24,9 @@ const Home: React.FC = () => {
             })
     }
     const fetchWalletBalance = () => {
-        EtherumService.read(walletAddress)
+        EtherumService.readBalance(walletAddress)
             .then(response => {
-                setResponseValue(`The balance is: ${response}`);
+                setWalletBalanceValue(`The balance is: ${response}`);
             })
     }
 

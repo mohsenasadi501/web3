@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import NotFound from './pages/NotFound';
 import Home from './pages/Home';
-import TodoList from './pages/Todolist';
 import Navbar from './components/Navbar';
 
 const App: React.FC = () => {
@@ -12,7 +11,6 @@ const App: React.FC = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/todolist" element={<TodoList />} />
         <Route path="*" element={<NotFound />} /> {/* 404 route */}
       </Routes>
     </Router>
