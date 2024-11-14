@@ -33,5 +33,22 @@ class EtherumService {
                 console.error(error);
             });
     }
+
+    async TransferWallet(_fromAddress: string, _toAddress: string, _fromPrivateKey: string, _amount: string): Promise<any> {
+        return axios.post(`http://localhost:3000/api/etherum/wallet/transfer`,
+            {
+                fromAddress: _fromAddress,
+                fromPrivateKey: _fromPrivateKey,
+                toAddress: _toAddress,
+                amount: _amount,
+            })
+            .then(response => {
+                console.log(response.data);
+                return response.data;
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
 }
 export default new EtherumService();

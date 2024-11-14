@@ -5,7 +5,7 @@ const contractData = require("../../../contracts/artifacts/contracts/TodoList.so
 
 export const createTaskController = async (req: Request, res: Response) => {
 
-    const provider = new Web3.providers.HttpProvider(process.env.SEPOLIA_BLOCKCHAIN_URL ?? "");
+    const provider = new Web3.providers.HttpProvider(process.env.HARDHAT_BLOCKCHAIN_URL ?? "");
     const web3 = new Web3(provider);
 
     const account = web3.eth.accounts.privateKeyToAccount(process.env.PRIVATE_KEY ?? "");
@@ -36,7 +36,7 @@ export const createTaskController = async (req: Request, res: Response) => {
 
 export const readAllTaskController = async (req: Request, res: Response) => {
 
-    const provider = new Web3.providers.HttpProvider(process.env.SEPOLIA_BLOCKCHAIN_URL ?? "");
+    const provider = new Web3.providers.HttpProvider(process.env.HARDHAT_BLOCKCHAIN_URL ?? "");
     const web3 = new Web3(provider);
 
     const contractABI = contractData.abi;
