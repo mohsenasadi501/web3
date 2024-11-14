@@ -42,3 +42,17 @@ export const BalanceController = async (req: Request, res: Response) => {
     console.log(balance)
     res.send(balance);
 }
+
+export const CreateWalletController = async (req: Request, res: Response) => {
+    
+    const web3 = new Web3();
+
+    // Create a new wallet (address + private key)
+    const wallet = web3.eth.accounts.create();
+
+    console.log("New Wallet Created:");
+    console.log("Address:", wallet.address);
+    console.log("Private Key:", wallet.privateKey);
+
+    res.send({ address: wallet.address, privateKey: wallet.privateKey });
+}

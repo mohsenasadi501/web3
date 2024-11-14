@@ -22,5 +22,16 @@ class EtherumService {
                 console.error(error);
             });
     }
+
+    async createWallet(): Promise<any> {
+        return axios.get(`http://localhost:3000/api/etherum/wallet/create`)
+            .then(response => {
+                console.log(response.data);
+                return response.data;
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
 }
 export default new EtherumService();
